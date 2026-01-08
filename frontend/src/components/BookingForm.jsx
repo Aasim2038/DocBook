@@ -21,7 +21,7 @@ const BookingForm = () => {
       const dateString = date.toLocaleDateString('en-CA'); 
       try {
         // Backend API call
-        const res = await axios.get(`http://docbook-api.onrender.com/api/bookings/check-slots/${dateString}`);
+        const res = await axios.get(`https://docbook-api.onrender.com/api/bookings/check-slots/${dateString}`);
         setBookedSlots(res.data); // Booked slots ki list save karo
         setSelectedSlot(null); // Purana selection hata do
         setMessage("");
@@ -43,7 +43,7 @@ const BookingForm = () => {
     const dateString = date.toLocaleDateString('en-CA');
 
     try {
-      await axios.post('http://docbook-api.onrender.com/api/bookings/book', {
+      await axios.post('https://docbook-api.onrender.com/api/bookings/book', {
         patientName: form.name,
         phone: form.phone,
         date: dateString,
